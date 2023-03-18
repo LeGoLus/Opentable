@@ -1,12 +1,22 @@
 "use client";
 import { useRouter } from "next/navigation";
-import { SyntheticEvent, useState } from "react";
+import { useState } from "react";
 
 export default function SearchBar() {
   const router = useRouter();
   const [location, setLocation] = useState("");
-  const handleSearch = (e: SyntheticEvent) => {
-    router.push("/search");
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) =>
+    setLocation(e.target.value);
+  const handleInputEnter = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter") {
+      handleSearch();
+    }
+  };
+  const handleSearch = () => {
+    if (!location) {
+      return;
+    }
+    router.push(`/search?location=${location}`);
   };
   return (
     <div className="text-left text-lg py-3 m-auto flex justify-center">
@@ -15,7 +25,8 @@ export default function SearchBar() {
         type="text"
         placeholder="State, city or town"
         value={location}
-        onChange={(e) => setLocation(e.target.value)}
+        onKeyDown={handleInputEnter}
+        onChange={handleInputChange}
       />
       <button
         className="rounded bg-red-600 px-9 py-2 text-white"
