@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Price from "../../components/Price";
+import Stars from "../../components/Stars";
 import { RestaurantCardType } from "../page";
 
 export default function RestaurantCard({
@@ -17,7 +18,9 @@ export default function RestaurantCard({
       <div className="pl-5">
         <h2 className="text-3xl">{restaurant.name}</h2>
         <div className="flex items-start">
-          <div className="flex mb-2">*****</div>
+          <div className="flex mb-2">
+            <Stars reviews={restaurant.reviews} />
+          </div>
           <p className="ml-2 text-sm">Awesome</p>
         </div>
         <div className="mb-9">
