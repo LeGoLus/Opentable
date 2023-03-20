@@ -10,7 +10,7 @@ export default function Reviews({ reviews }: { reviews: Review[] }) {
       <div>
         {!!reviews.length &&
           reviews.map((review) => {
-            return <ReviewCard review={review} />;
+            return <ReviewCard key={review.id} review={review} />;
           })}
         {!reviews.length && <h5>Where is no reviews yet</h5>}
       </div>
