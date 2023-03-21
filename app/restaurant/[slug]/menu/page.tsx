@@ -17,7 +17,7 @@ const fetchRestaurantMenu = async (slug: string) => {
   });
 
   if (!restaurant) {
-    throw new Error("No such item!");
+    throw new Error("Unfortunately, menu for this restaurant is not provided");
   }
   return restaurant.items;
 };
