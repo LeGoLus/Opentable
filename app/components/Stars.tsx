@@ -35,5 +35,5 @@ export default function Stars({
       return <Image key={index} src={star} alt="" className="w-4 h-4 mr-1" />;
     });
   };
-  return <div className="flex items-center">{renderStars()}</div>;
+  return <div className="flex items-center bg-white">{renderStars()}</div>;
 }

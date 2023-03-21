@@ -18,7 +18,7 @@ export default function RestaurantCard({ restaurant }: Props) {
     return "Basic";
   };
   return (
-    <div className="w-64 h-72 m-3 rounded overflow-hidden border cursor-pointer">
+    <div className="w-64 h-72 m-3 rounded overflow-hidden border cursor-pointer bg-white">
       <Link href={`/restaurant/${restaurant.slug}`}>
         <img
           src={restaurant.main_image}

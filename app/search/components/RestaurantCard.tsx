@@ -9,7 +9,7 @@ export default function RestaurantCard({
   restaurant: RestaurantCardType;
 }) {
   return (
-    <div className="border-b flex pb-5">
+    <div className="border-b flex bg-white mb-2 rounded p-2">
       <img
         src={restaurant.main_image}
         alt={`${restaurant.name} main image`}
