@@ -72,9 +72,10 @@ export default function SearchSidebar({
       <div className="mt-3 mr-6">
         <h1 className="mb-2">Price</h1>
         <div className="flex">
-          {prices.map(({ price, label, className }) => {
+          {prices.map(({ price, label, className }, index) => {
             return (
               <Link
+                key={index}
                 href={{
                   pathname: "/search",
                   query: { ...searchParams, price },
